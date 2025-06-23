@@ -1,0 +1,32 @@
+# Define the performance indicators and their current values
+TR = 80.5
+TY = 75.2
+TB = 77.8
+IR = 10.3
+IY = 11.1
+IB = 9.7
+TO = 42.1
+
+# Define the minimum and maximum values for each indicator
+TR_min, TR_max = 60.0, 100.0
+TY_min, TY_max = 55.0, 95.0
+TB_min, TB_max = 58.0, 90.0
+IR_min, IR_max = 5.0, 15.0
+IY_min, IY_max = 6.0, 16.0
+IB_min, IB_max = 4.0, 12.0
+TO_min, TO_max = 35.0, 60.0
+
+# Calculate the indicator scores
+TR_score = (TR - TR_min) / (TR_max - TR_min)
+TY_score = (TY - TY_min) / (TY_max - TY_min)
+TB_score = (TB - TB_min) / (TB_max - TB_min)
+IR_score = (IR - IR_min) / (IR_max - IR_min)
+IY_score = (IY - IY_min) / (IY_max - IY_min)
+IB_score = (IB - IB_min) / (IB_max - IB_min)
+TO_score = (TO - TO_min) / (TO_max - TO_min)
+
+# Calculate the health index
+health_index = (0.2 * TR_score) + (0.2 * TY_score) + (0.2 * TB_score) + (0.15 * IR_score) + (0.15 * IY_score) + (0.1 * IB_score) + (0.1 * TO_score)
+
+# Print the health index
+print("The transformer health index is:", health_index)
